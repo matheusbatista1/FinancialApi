@@ -86,8 +86,8 @@ Isso construirá a imagem da API e iniciará os containers `api` e `db`.
 
 ### 4. Verifique a Execução
 
-- A API estará disponível em [http://localhost:7045](http://localhost:8080).
-- Se o Swagger estiver habilitado (em ambiente Development), acesse [http://localhost:7045/swagger](http://localhost:8080/swagger) para explorar e testar as rotas.
+- A API estará disponível em [http://localhost:7045](http://localhost:7045).
+- Se o Swagger estiver habilitado (em ambiente Development), acesse [http://localhost:7045/swagger](http://localhost:7045/swagger) para explorar e testar as rotas.
 - O banco de dados estará disponível em `localhost:5432`.
 
 ### 5. Pare os Serviços
@@ -98,6 +98,16 @@ Para parar os containers, use:
 docker-compose down
 ```
 
+### 6. Executando os Testes Unitários
+
+Para rodar os testes unitários do projeto, utilize o comando abaixo na raiz da solução ou dentro da pasta do projeto de testes:
+
+```bash
+dotnet test
+```
+
+Isso irá compilar a solução e executar todos os testes unitários implementados, exibindo o resultado no terminal.
+
 ---
 
 ## Licença
@@ -106,4 +116,4 @@ Este projeto está sob a MIT License. Veja o arquivo LICENSE para mais detalhes.
 
 ## Contato
 
-Para dúvidas ou sugestões, entre em contato com seu-
+Para dúvidas ou sugestões, entre em contato com seu
