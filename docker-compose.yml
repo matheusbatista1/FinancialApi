@@ -1,0 +1,52 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: FinancialApi.API/Dockerfile
+    ports:
+      - "7045:8080"
+    env_file:
+      - .env
+    environment:
+      DOTNET_RUNNING_IN_CONTAINER: "true"
+      ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT}
+      ConnectionStrings__DefaultConnection: ${ConnectionStrings__DefaultConnection}
+      JwtSettings__JwtKey: ${JwtSettings__JwtKey}
+      JwtSettings__JwtIssuer: ${JwtSettings__JwtIssuer}
+      JwtSettings__JwtAudience: ${JwtSettings__JwtAudience}
+      ComplianceAuth__Email: ${ComplianceAuth__Email}
+      ComplianceAuth__Password: ${ComplianceAuth__Password}
+      ComplianceApi__BaseUrl: ${ComplianceApi__BaseUrl}
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - financial-network
+    restart: unless-stopped
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - financial-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    restart: unless-stopped
+
+networks:
+  financial-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
