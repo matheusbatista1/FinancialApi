@@ -114,6 +114,10 @@ Isso irá compilar a solução e executar todos os testes unitários implementad
 
 Este projeto está sob a MIT License. Veja o arquivo LICENSE para mais detalhes.
 
-## Contato
+📝 Notas para Avaliadores
+Este projeto foi desenvolvido para o Desafio de Programação Desenvolvedor .Net Pleno e demonstra:
 
-Para dúvidas ou sugestões, entre em contato com seu
+Estrutura e Organização: Código organizado em camadas, com separação clara entre API, Tests e infraestrutura.
+Boas Práticas: Uso de padrões modernos de C#, logging e containerização.
+Domínio de Tecnologias: Integração com ASP.NET Core, MediatR xUnit, Refit, EF Core, FluentValidation, JWT Auth, Docker e PostgreSQL.
+Para dúvidas, entre em contato via [matheusbatista.tech@gmail.com] ou abra uma issue no repositório.
