@@ -4,7 +4,7 @@ using FinancialApi.Domain.Interfaces.Repositories;
 using FluentAssertions;
 using Moq;
 
-namespace FinancialApi.Tests.UnitTests.Handlers.People;
+namespace FinancialApi.UnitTests.Handlers;
 
 public class CreatePersonHandlerTests
 {

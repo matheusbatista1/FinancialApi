@@ -5,7 +5,7 @@ using FinancialApi.Domain.Interfaces.Services;
 using FluentAssertions;
 using Moq;
 
-namespace FinancialApi.Tests.UnitTests.Handlers.Auth;
+namespace FinancialApi.UnitTests.Handlers;
 
 public class LoginPersonHandlerTests
 {

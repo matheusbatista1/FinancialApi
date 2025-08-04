@@ -5,7 +5,7 @@ using FluentAssertions;
 using Microsoft.Extensions.Logging;
 using Moq;
 
-namespace FinancialApi.Tests.UnitTests.Handlers.Account;
+namespace FinancialApi.UnitTests.Handlers;
 
 public class CreateAccountHandlerTests
 {
